@@ -1,0 +1,133 @@
+main {
+  background-color: var(--primary-invert);
+  border-radius: 0.5rem;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.hero-section,
+.latest-arrivals-container {
+  margin: 4rem 0 6rem;
+}
+
+.hero__header {
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 2.5rem;
+}
+
+.hero__subheader {
+  color: var(--secondary);
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.hero__cta {
+  background-color: var(--brand);
+  border-radius: 0.25rem;
+  color: var(--primary-invert);
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  padding: 1rem 2.5rem;
+}
+
+.hero__img {
+  border-radius: 0.5rem;
+  margin: 3rem 0;
+  height: 16.5rem;
+  object-fit: cover;
+}
+
+.latest-arrivals__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.latest-arrivals__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2rem;
+}
+
+.latest-arrivals__view-all {
+  border-radius: 0.25rem;
+  box-shadow: var(--box-shadow);
+  padding: 0.625rem 1rem;
+}
+
+.product__product-card {
+  margin: 2rem 0 3rem;
+}
+
+.product__img {
+  border-radius: 0.5rem;
+  height: 14rem;
+  object-fit: cover;
+  width: 100%;
+}
+
+.product__product-card:first-child .product__img {
+  height: 18.75rem;
+}
+
+.product__name {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.75rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.product__price {
+  color: var(--secondary);
+  line-height: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .latest-arrivals-container {
+    padding: 3rem 0;
+  }
+
+  .latest-arrivals__title {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .latest-arrivals__products-listing {
+    display: flex;
+    align-content: stretch;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .product__product-card {
+    flex: calc(50% - 2rem);
+    margin: 2rem 0;
+  }
+
+  .product__img {
+    height: 18.75rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  main {
+    padding: 5rem;
+  }
+
+  .product__product-card {
+    flex: calc(25% - 2rem);
+    margin: 1rem 0;
+  }
+}
+
+@media (min-width: 1600px) {
+  main {
+    margin: 1rem auto;
+    max-width: 100rem;
+  }
+}
