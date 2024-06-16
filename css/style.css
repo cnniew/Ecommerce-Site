@@ -6,7 +6,7 @@ main {
 }
 
 .hero-section,
-.latest-arrivals-container {
+.latest-arrivals-section {
   margin: 4rem 0 6rem;
 }
 
@@ -31,7 +31,7 @@ main {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5rem;
-  padding: 1rem 2.5rem;
+  padding: 0.75rem 2.5rem;
 }
 
 .hero__img {
@@ -39,6 +39,7 @@ main {
   margin: 3rem 0;
   height: 16.5rem;
   object-fit: cover;
+  width: 100%;
 }
 
 .latest-arrivals__header {
@@ -87,8 +88,26 @@ main {
 }
 
 @media (min-width: 768px) {
-  .latest-arrivals-container {
-    padding: 3rem 0;
+  .hero__header {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+
+  .hero__subheader {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    margin: 1.5rem 0 3rem;
+  }
+
+  .hero__cta {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    padding: 1rem 5rem;
+  }
+
+  .hero__img {
+    margin: 2rem 0;
+    height: 32rem;
   }
 
   .latest-arrivals__title {
@@ -115,8 +134,28 @@ main {
 }
 
 @media (min-width: 1440px) {
-  main {
-    padding: 5rem;
+  .hero-section,
+  .latest-arrivals-section {
+    margin: 5rem;
+  }
+
+  .hero-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .hero__header {
+    font-size: 3.75rem;
+    line-height: 3.75rem;
+  }
+
+  .hero__subheader {
+    margin: 2rem 0 4rem;
+  }
+
+  .hero__img {
+    width: 43.5rem;
   }
 
   .product__product-card {
