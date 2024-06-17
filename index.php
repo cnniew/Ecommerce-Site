@@ -27,7 +27,7 @@
         <?php
         require 'config.php';
         require 'connection.php';
-        $sql = "SELECT 
+        $sqlProducts = "SELECT 
                   p.ProductID, 
                   p.ProductName, 
                   p.ImageURL,
@@ -39,15 +39,35 @@
                   p.ProductID = i.ProductID 
                   AND NOT(i.Stock = 0) 
                   LIMIT 8";
-        $result = $connection->query($sql);
+        $resultProducts = $connection->query($sqlProducts);
 
-        while ($row = $result->fetch_assoc()) {
+        while ($rowProducts = $resultProducts->fetch_assoc()) {
           echo
           '<div class="product__product-card">
-          <img class="product__img" src="img/' . $row["ImageURL"] . '" alt="' . $row["ProductName"] . '">
-          <p class="product__name">' . $row["ProductName"] . '</p>
-          <p class="product__price">$' . $row["ListPrice"] . '</p>
-        </div>';
+            <img class="product__img" src="img/' . $rowProducts["ImageURL"] . '" alt="' . $rowProducts["ProductName"] . '">
+            <p class="product__name">' . $rowProducts["ProductName"] . '</p>
+            <p class="product__price">$' . $rowProducts["ListPrice"] . '</p>
+          </div>';
+        }
+        ?>
+      </div>
+    </section>
+
+    <section class="collections-section">
+      <h3 class="collections__title">Our Collections</h3>
+      <div class="collections__listing">
+        <?php
+        $sqlCollections = "SELECT CollectionName, Description, ImageURL FROM Collections";
+        $resultCollections = $connection->query($sqlCollections);
+        while ($rowCollections = $resultCollections->fetch_assoc()) {
+          echo
+          '<div class="collections__collection-card">
+            <img class="collection__img" src="img/' . $rowCollections["ImageURL"] . '" alt="">
+            <div class="collection__text-container">
+              <p class="collection__name">' . $rowCollections["CollectionName"] . '</p>
+              <p class="collection__description">' . $rowCollections["Description"] . '</p>
+            </div>
+          </div>';
         }
         ?>
       </div>

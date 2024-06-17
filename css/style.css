@@ -87,6 +87,48 @@ main {
   line-height: 1.5rem;
 }
 
+.collections__title {
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 2.25rem;
+}
+
+.collections__collection-card {
+  position: relative;
+  margin: 2rem 0;
+}
+
+.collections__collection-card:first-child .collection__img {
+  height: 36.25rem;
+}
+
+.collection__img {
+  border-radius: 0.5rem;
+  height: 21rem;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.collection__text-container {
+  color: white;
+  padding: 1rem;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.collection__name {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.collection__description {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.75rem;
+}
+
 @media (min-width: 768px) {
   .hero__header {
     font-size: 3rem;
@@ -131,6 +173,41 @@ main {
   .product__img {
     height: 18.75rem;
   }
+
+  .collections__listing {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .collections__collection-card {
+    margin: 0;
+  }
+
+  .collections__collection-card:nth-child(1) {
+    grid-area: 1 / 1 / 3 / 2;
+  }
+
+  .collections__collection-card:nth-child(2) {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+
+  .collections__collection-card:nth-child(3) {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+
+  .collection__img {
+    height: 100%;
+  }
+
+  .collections__collection-card:first-child .collection__img {
+    height: 100%;
+  }
+
+  .collections__title {
+    margin-bottom: 2rem;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -161,6 +238,19 @@ main {
   .product__product-card {
     flex: calc(25% - 2rem);
     margin: 1rem 0;
+  }
+
+  .collections__collection-card:nth-child(1) {
+    height: 36.25rem;
+  }
+
+  .collections__collection-card:nth-child(2),
+  .collections__collection-card:nth-child(3) {
+    height: 17.25rem;
+  }
+
+  .collection__img {
+    height: 100%;
   }
 }
 
