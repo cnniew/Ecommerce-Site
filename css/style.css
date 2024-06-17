@@ -6,10 +6,13 @@ main {
 }
 
 .hero-section,
-.latest-arrivals-section {
+.latest-arrivals-section,
+.collections-section,
+.commitment-section {
   margin: 4rem 0 6rem;
 }
 
+/* Hero */
 .hero__header {
   font-size: 2.25rem;
   font-weight: 600;
@@ -42,6 +45,7 @@ main {
   width: 100%;
 }
 
+/* Latest Arrivals */
 .latest-arrivals__header {
   display: flex;
   align-items: center;
@@ -87,6 +91,7 @@ main {
   line-height: 1.5rem;
 }
 
+/* Our Collections */
 .collections__title {
   font-size: 1.875rem;
   font-weight: 600;
@@ -129,7 +134,60 @@ main {
   line-height: 1.75rem;
 }
 
+/* Commitment */
+.commitment-section {
+  text-align: center;
+}
+.commitment__subtitle {
+  color: var(--brand);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+
+.commitment__title {
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 2.25rem;
+}
+
+.commitment__description {
+  color: var(--secondary);
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.commitment__listing {
+  padding: 2rem 0;
+}
+
+.commitment__feature {
+  padding: 2rem 0;
+}
+
+.commitment__feature-icon {
+  box-shadow: var(--box-shadow);
+  border-radius: 50%;
+  color: var(--brand);
+  display: inline-block;
+  padding: 1rem 0.8rem;
+}
+
+.commitment__feature-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.75rem;
+  padding: 1.5rem 0 0.5rem;
+}
+
+.commitment__feature-description {
+  color: var(--secondary);
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 @media (min-width: 768px) {
+  /* Hero */
   .hero__header {
     font-size: 3rem;
     line-height: 3rem;
@@ -152,6 +210,7 @@ main {
     height: 32rem;
   }
 
+  /* Latest Arrivals */
   .latest-arrivals__title {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -174,6 +233,7 @@ main {
     height: 18.75rem;
   }
 
+  /* Our Collections */
   .collections__listing {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -208,14 +268,28 @@ main {
   .collections__title {
     margin-bottom: 2rem;
   }
+
+  /* Commitment */
+  .commitment__title {
+    font-size: 3rem;
+    line-height: 3rem;
+    padding: 1rem 0;
+  }
+
+  .commitment__description {
+    font-size: 1.25rem;
+  }
 }
 
 @media (min-width: 1440px) {
   .hero-section,
-  .latest-arrivals-section {
+.latest-arrivals-section,
+.collections-section,
+.commitment-section {
     margin: 5rem;
   }
 
+  /* Hero */
   .hero-section {
     display: flex;
     align-items: center;
@@ -240,6 +314,7 @@ main {
     margin: 1rem 0;
   }
 
+  /* Our Collections */
   .collections__collection-card:nth-child(1) {
     height: 36.25rem;
   }
@@ -251,6 +326,20 @@ main {
 
   .collection__img {
     height: 100%;
+  }
+
+  /* Commitment */
+  .commitment__header {
+    padding: 0 10rem;
+  }
+
+  .commitment__listing {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .commitment__feature {
+    flex: 1 1 0;
   }
 }
 
