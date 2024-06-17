@@ -1,7 +1,7 @@
-main {
-  background-color: var(--primary-invert);
-  border-radius: 0.5rem;
-  margin: 1rem;
+.home__main {
+  background-color: var(--primary);
+  border-radius: 0.5rem 0.5rem 0 0;
+  margin: 0 1rem 0;
   padding: 1rem;
 }
 
@@ -9,7 +9,7 @@ main {
 .latest-arrivals-section,
 .collections-section,
 .commitment-section {
-  margin: 4rem 0 6rem;
+  padding: 3rem 0;
 }
 
 /* Hero */
@@ -23,13 +23,13 @@ main {
   color: var(--secondary);
   font-size: 1.125rem;
   line-height: 1.75rem;
-  margin: 1.5rem 0 2rem;
+  margin: 2rem 0;
 }
 
 .hero__cta {
   background-color: var(--brand);
   border-radius: 0.25rem;
-  color: var(--primary-invert);
+  color: var(--primary);
   display: inline-block;
   font-size: 1rem;
   font-weight: 500;
@@ -39,9 +39,9 @@ main {
 
 .hero__img {
   border-radius: 0.5rem;
-  margin: 3rem 0;
   height: 16.5rem;
   object-fit: cover;
+  margin-top: 2.5rem;
   width: 100%;
 }
 
@@ -50,6 +50,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 2rem;
 }
 
 .latest-arrivals__title {
@@ -61,34 +62,11 @@ main {
 .latest-arrivals__view-all {
   border-radius: 0.25rem;
   box-shadow: var(--box-shadow);
-  padding: 0.625rem 1rem;
+  padding: 0.7rem 1.2rem;
 }
 
-.product__product-card {
-  margin: 2rem 0 3rem;
-}
-
-.product__img {
-  border-radius: 0.5rem;
-  height: 14rem;
-  object-fit: cover;
-  width: 100%;
-}
-
-.product__product-card:first-child .product__img {
+.products-listing__product-card:first-child .products-listing__img {
   height: 18.75rem;
-}
-
-.product__name {
-  font-size: 1.125rem;
-  font-weight: 500;
-  line-height: 1.75rem;
-  margin: 1rem 0 0.5rem;
-}
-
-.product__price {
-  color: var(--secondary);
-  line-height: 1.5rem;
 }
 
 /* Our Collections */
@@ -100,7 +78,7 @@ main {
 
 .collections__collection-card {
   position: relative;
-  margin: 2rem 0;
+  margin-top: 1.5rem;
 }
 
 .collections__collection-card:first-child .collection__img {
@@ -109,14 +87,14 @@ main {
 
 .collection__img {
   border-radius: 0.5rem;
-  height: 21rem;
-  width: 100%;
-  object-fit: cover;
   display: block;
+  height: 21rem;
+  object-fit: cover;
+  width: 100%;
 }
 
 .collection__text-container {
-  color: white;
+  color: var(--primary);
   padding: 1rem;
   position: absolute;
   bottom: 1rem;
@@ -138,6 +116,7 @@ main {
 .commitment-section {
   text-align: center;
 }
+
 .commitment__subtitle {
   color: var(--brand);
   font-size: 1rem;
@@ -149,6 +128,7 @@ main {
   font-size: 1.875rem;
   font-weight: 600;
   line-height: 2.25rem;
+  margin: 1rem 0;
 }
 
 .commitment__description {
@@ -157,12 +137,8 @@ main {
   line-height: 1.75rem;
 }
 
-.commitment__listing {
-  padding: 2rem 0;
-}
-
 .commitment__feature {
-  padding: 2rem 0;
+  padding-top: 3rem;
 }
 
 .commitment__feature-icon {
@@ -173,14 +149,19 @@ main {
   padding: 1rem 0.8rem;
 }
 
-.commitment__feature-title {
+.commitment__feature-title,
+.footer__join-title {
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.75rem;
-  padding: 1.5rem 0 0.5rem;
 }
 
-.commitment__feature-description {
+.commitment__feature-title {
+  padding: 1rem 0;
+}
+
+.commitment__feature-description,
+.footer__join-description {
   color: var(--secondary);
   font-size: 1rem;
   line-height: 1.5rem;
@@ -206,7 +187,6 @@ main {
   }
 
   .hero__img {
-    margin: 2rem 0;
     height: 32rem;
   }
 
@@ -216,29 +196,12 @@ main {
     line-height: 2.25rem;
   }
 
-  .latest-arrivals__products-listing {
-    display: flex;
-    align-content: stretch;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .product__product-card {
-    flex: calc(50% - 2rem);
-    margin: 2rem 0;
-  }
-
-  .product__img {
-    height: 18.75rem;
-  }
-
   /* Our Collections */
   .collections__listing {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .collections__collection-card {
@@ -273,7 +236,6 @@ main {
   .commitment__title {
     font-size: 3rem;
     line-height: 3rem;
-    padding: 1rem 0;
   }
 
   .commitment__description {
@@ -283,10 +245,10 @@ main {
 
 @media (min-width: 1440px) {
   .hero-section,
-.latest-arrivals-section,
-.collections-section,
-.commitment-section {
-    margin: 5rem;
+  .latest-arrivals-section,
+  .collections-section,
+  .commitment-section {
+    padding: 5rem;
   }
 
   /* Hero */
@@ -305,16 +267,31 @@ main {
     margin: 2rem 0 4rem;
   }
 
+  .hero__cta:hover {
+    background-color: var(--brand-hover);
+  }
+
   .hero__img {
+    margin: 0;
     width: 43.5rem;
   }
 
-  .product__product-card {
-    flex: calc(25% - 2rem);
-    margin: 1rem 0;
+  /* Latest Arrivals */
+  .latest-arrivals__view-all:hover {
+    background-color: var(--hover-grey);
+  }
+
+  .products-listing__product-card {
+    flex: 1 1 20%;
+    margin: 0;
   }
 
   /* Our Collections */
+  .product__product-card:hover,
+  .collections__collection-card:hover .collection__text-container {
+    color: var(--brand);
+  }
+
   .collections__collection-card:nth-child(1) {
     height: 36.25rem;
   }
@@ -322,6 +299,10 @@ main {
   .collections__collection-card:nth-child(2),
   .collections__collection-card:nth-child(3) {
     height: 17.25rem;
+  }
+
+  .collection__text-container:hover {
+    cursor: pointer;
   }
 
   .collection__img {
@@ -337,15 +318,15 @@ main {
     display: flex;
     gap: 2rem;
   }
-  
+
   .commitment__feature {
     flex: 1 1 0;
   }
 }
 
 @media (min-width: 1600px) {
-  main {
-    margin: 1rem auto;
+  .home__main {
+    margin: 0 auto;
     max-width: 100rem;
   }
 }

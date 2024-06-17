@@ -16,13 +16,14 @@ CREATE TABLE Collections (
   Description VARCHAR(100),
   ImageURL VARCHAR(500),
   CreatedAt DATE,
+  AltText VARCHAR(100),
   PRIMARY KEY (CollectionID)
 );
 
 INSERT INTO Collections VALUES
-('cozy','Cozy Comfort','Plush fabrics and soothing designs','cozy-comfort.jpg','2024-01-01'),
-('urban','Urban Oasis','For the city dwellers','urban-oasis.jpg','2024-01-01'),
-('fresh','Fresh Fusion','Contemporary styles and patterns','fresh-fusion.jpg','2024-01-01');
+('cozy','Cozy Comfort','Plush fabrics and soothing designs','cozy-comfort.jpg','person wearing hat and cozy sweater','2024-01-01'),
+('urban','Urban Oasis','For the city dwellers','urban-oasis.jpg','person wearing fresh fashion','2024-01-01'),
+('fresh','Fresh Fusion','Contemporary styles and patterns','fresh-fusion.jpg','person wearing urban fashion holding oversized sunglasses','2024-01-01');
 
 CREATE TABLE Products (
   ProductID VARCHAR(50),
@@ -236,3 +237,13 @@ INSERT INTO ProductReviews VALUES
 ('urban-drift-bucket-hat','polly-cobb',3,'Comfortable but heavier than I expected, not ideal for all weather conditions.','2024-01-29'),
 ('urban-drift-bucket-hat','keenan-potts',4,'Very versatile and durable, a solid choice for outdoor enthusiasts.','2024-05-01'),
 ('urban-drift-bucket-hat','bonita-woodward',5,'Extremely soft and fits well. Love the lightweight design.','2024-05-02');
+
+CREATE TABLE Newsletter (
+  Email VARCHAR(50),
+  PRIMARY KEY (Email)
+);
+
+INSERT INTO Newsletter VALUES 
+('test1@test.com'),
+('test2@test.com'),
+('test3@test.com');

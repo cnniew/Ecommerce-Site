@@ -6,10 +6,12 @@
 
   --brand: #4338ca;
   --brand-hover: #3730a3;
-  --primary: #171717;
-  --primary-invert: #fff;
+  --primary: #fff;
   --secondary: #525252;
+  --tertiary: #737373;
+  --border-grey: #e5e5e5;
   --box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px;
+  --hover-grey: #fafafa;
 }
 
 button {

@@ -12,6 +12,8 @@
 
 <link rel="stylesheet" type="text/css" href="css/reset.css?<?php echo time(); ?>" />
 <link rel="stylesheet" type="text/css" href="css/global.css?<?php echo time(); ?>" />
-<link rel="stylesheet" type="text/css" href="css/style.css?<?php echo time(); ?>" />
+<link rel="stylesheet" type="text/css" href="css/navbar.css?<?php echo time(); ?>" />
+<link rel="stylesheet" type="text/css" href="css/footer.css?<?php echo time(); ?>" />
+<link rel="stylesheet" type="text/css" href="css/products_listing.css?<?php echo time(); ?>" />
 
-<script src="js/index.js" defer></script>
+<script src="js/index.js?<?php echo time(); ?>" type="text/javascript" defer></script>
