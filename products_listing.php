@@ -3,24 +3,24 @@
   require 'config.php';
   require 'connection.php';
 
-  $sql = 'SELECT p.ProductID, p.ProductName, p.ImageURL, i.ListPrice FROM Products p, Inventory i WHERE p.ProductID = i.ProductID AND NOT(i.Stock = 0)';
+  $sql_category = $sql_collection = $sql_sort_by = $sql_limit = $sql_limit = '';
 
   if (isset($_GET['category'])) {
-    $sql .= ' AND p.CategoryID IN ("' . implode('", "', $_GET['category']) . '")';
+    $sql_category = ' AND p.CategoryID IN ("' . implode('", "', $_GET['category']) . '")';
   }
 
   if (isset($_GET['collections'])) {
     $collections = $_GET['collections'];
-    $has_latest_arrivals = in_array('latest-arrivals', $collections);
-    $mulitple_filters = count($collections) > 1;
+    // $has_latest_arrivals = in_array('latest-arrivals', $collections);
+    // $mulitple_filters = count($collections) > 1;
 
-    if ($has_latest_arrivals) {
-      if ($mulitple_filters) {
-        $sql .= ' AND p.CollectionID IN ("' . implode('", "', array_slice($collections, 1)) . '")';
+    if (in_array('latest-arrivals', $collections)) {
+      if (count($collections) > 1) {
+        $sql_collection = ' AND p.CollectionID IN ("' . implode('", "', array_slice($collections, 1)) . '")';
       }
-      $sql .= ' AND p.CreatedAt BETWEEN "2024-02-25" AND "2024-05-01"';
+      $sql_collection .= ' AND p.CreatedAt BETWEEN "2024-02-25" AND "2024-05-01"';
     } else {
-      $sql .= ' AND p.CollectionID IN ("' . implode('", "', $collections) . '")';
+      $sql_collection = ' AND p.CollectionID IN ("' . implode('", "', $collections) . '")';
     }
   }
 
@@ -28,13 +28,13 @@
     $sort_by = $_GET['sort-by'];
     switch ($sort_by) {
       case 'newest':
-        $sql .= ' ORDER BY CreatedAt DESC';
+        $sql_sort_by = ' ORDER BY CreatedAt DESC';
         break;
       case 'price-low-high':
-        $sql .= ' ORDER BY ListPrice';
+        $sql_sort_by = ' ORDER BY ListPrice';
         break;
       case 'price-high-low':
-        $sql .= ' ORDER BY ListPrice DESC';
+        $sql_sort_by = ' ORDER BY ListPrice DESC';
         break;
       default:
         break;
@@ -42,8 +42,10 @@
   }
 
   if (isset($_GET['limit'])) {
-    $sql .= ' LIMIT ' . $_GET['limit'];
+    $sql_limit = ' LIMIT ' . $_GET['limit'];
   }
+
+  $sql = 'SELECT p.ProductID, p.ProductName, i.ListPrice FROM Products p, Inventory i WHERE p.ProductID = i.ProductID AND NOT(i.Stock = 0) ' . $sql_category . $sql_collection . ' GROUP BY p.ProductID' . $sql_sort_by . $sql_limit;
   // echo $sql;
 
   $result = $connection->query($sql);
@@ -52,10 +54,11 @@
     while ($row = $result->fetch_assoc()) {
       echo
       '<div class="products-listing__product-card">
-
-        <img class="products-listing__img" src="img/' . $row["ImageURL"] . '" alt="' . $row["ProductName"] . '">
-        <p class="products-listing__name">' . $row["ProductName"] . '</p>
-        <p class="products-listing__price">$' . $row["ListPrice"] . '</p>
+        <a href="product.php?productID=' . $row["ProductID"] . '">
+          <img class="products-listing__img" src="img/products/' . $row["ProductID"] . '/' . $row["ProductID"] . '-1.jpg" alt="' . $row["ProductName"] . '">
+          <p class="products-listing__name">' . $row["ProductName"] . '</p>
+          <p class="products-listing__price">$' . $row["ListPrice"] . '</p>
+        </a>
       </div>';
     }
   } else {
@@ -69,5 +72,3 @@
   }
   ?>
 </section>
-
-<a href="product-details.php?product_id="></a>

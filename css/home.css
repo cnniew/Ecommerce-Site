@@ -15,7 +15,7 @@
 /* Hero */
 .hero__header {
   font-size: 2.25rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   line-height: 2.5rem;
 }
 
@@ -32,7 +32,7 @@
   color: var(--primary);
   display: inline-block;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   line-height: 1.5rem;
   padding: 0.75rem 2.5rem;
 }
@@ -55,7 +55,7 @@
 
 .latest-arrivals__title {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   line-height: 2rem;
 }
 
@@ -72,7 +72,7 @@
 /* Our Collections */
 .collections__title {
   font-size: 1.875rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   line-height: 2.25rem;
 }
 
@@ -108,7 +108,7 @@
 
 .collection__description {
   font-size: 1.125rem;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   line-height: 1.75rem;
 }
 
@@ -120,13 +120,13 @@
 .commitment__subtitle {
   color: var(--brand);
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   line-height: 1.5rem;
 }
 
 .commitment__title {
   font-size: 1.875rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   line-height: 2.25rem;
   margin: 1rem 0;
 }
@@ -152,7 +152,7 @@
 .commitment__feature-title,
 .footer__join-title {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   line-height: 1.75rem;
 }
 

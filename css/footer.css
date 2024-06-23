@@ -7,7 +7,7 @@
 
 .footer__join-title {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   line-height: 1.75rem;
 }
 
@@ -47,12 +47,12 @@
 
 .footer__error {
   color: #dc2626;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
 
 .footer__success {
   color: #15803d;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
 
 .footer__copyright-socials-section {
@@ -144,7 +144,7 @@
 
 @media (min-width: 1440px) {
   .footer {
-    padding: 5rem;
+    padding: 3rem 5rem 5rem 5rem;
   }
 
   .footer__join-description {

@@ -16,4 +16,4 @@
 <link rel="stylesheet" type="text/css" href="css/footer.css?<?php echo time(); ?>" />
 <link rel="stylesheet" type="text/css" href="css/products_listing.css?<?php echo time(); ?>" />
 
-<script src="js/index.js?<?php echo time(); ?>" type="text/javascript" defer></script>
+<script type="text/javascript" src="js/index.js?<?php echo time(); ?>" defer></script>

@@ -12,6 +12,8 @@
   --border-grey: #e5e5e5;
   --box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px;
   --hover-grey: #fafafa;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
 }
 
 button {

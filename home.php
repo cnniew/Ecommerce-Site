@@ -49,7 +49,7 @@
         echo
         '<div class="collections__collection-card">
           <a href="products.php?collections[]=' . $row["CollectionID"] . '">
-            <img class="collection__img" src="img/' . $row["ImageURL"] . '" alt="' . $row["AltText"] . '">
+            <img class="collection__img" src="img/collections/' . $row["ImageURL"] . '" alt="' . $row["AltText"] . '">
             <div class="collection__text-container">
               <p class="collection__name">' . $row["CollectionName"] . '</p>
               <p class="collection__description">' . $row["Description"] . '</p>
