@@ -8,11 +8,9 @@
 </head>
 
 <body>
-  <header>
-    <?php include 'navbar.php' ?>
-  </header>
+  <?php include 'navbar.php' ?>
 
-  <main class="products-page__main">
+  <main class="page__main products-page__main">
     <button class="filter-section__toggle" aria-label="Open filter menu">
       <i class="ri-filter-line ri-lg filter-section__toggle-icon" aria-label="Toggle filter menu"></i>Filter
     </button>

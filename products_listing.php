@@ -11,8 +11,6 @@
 
   if (isset($_GET['collections'])) {
     $collections = $_GET['collections'];
-    // $has_latest_arrivals = in_array('latest-arrivals', $collections);
-    // $mulitple_filters = count($collections) > 1;
 
     if (in_array('latest-arrivals', $collections)) {
       if (count($collections) > 1) {

@@ -24,7 +24,7 @@ document.querySelectorAll(".product-details__imgs-img").forEach((thumbnail) => {
 function showActive(elements, targetClass, className) {
   document.querySelectorAll(elements).forEach((element) => {
     element.classList.remove(className);
-    if (element.classList.contains(targetClass)) element.classList.add(className);
+    (element.classList.contains(targetClass)) && element.classList.add(className);
   });
 }
 document.querySelectorAll(".product-specs__navbar-items").forEach((item) => {

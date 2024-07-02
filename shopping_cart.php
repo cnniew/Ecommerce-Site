@@ -1,20 +1,45 @@
-<?php
-session_start();
+<!DOCTYPE html>
+<html lang="en">
 
-if (isset($_POST["product_id"])) {
-	$product_id = $_POST["product_id"];
-	$list_price = intval($_POST["list_price"]);
+<head>
+	<title>Shopping Cart</title>
+	<?php include 'head.php' ?>
+	<link rel="stylesheet" type="text/css" href="css/shopping_cart.css?<?php echo time(); ?>" />
+</head>
 
-	if (!isset($_SESSION['shopping_cart'])) {
-		$_SESSION['shopping_cart'] = [];
-	}
+<body>
+	<?php include 'navbar.php' ?>
 
-	if (array_key_exists($product_id, $_SESSION['shopping_cart'])) {
-		$_SESSION['shopping_cart'][$product_id][0]++;
-	} else {
-		$_SESSION['shopping_cart'][$product_id] = [1, $list_price];
-	}
+	<main class="page__main">
+		<h1>Shopping Cart</h1>
 
-	var_dump($_SESSION['shopping_cart']);
-}
-?>
+		<?php
+		session_start();
+
+		if (isset($_POST["product-id"])) {
+			$product_id = $_POST["product-id"];
+			$product_name = $_POST["product-name"];
+			$list_price = intval($_POST["list-price"]);
+			$description = $_POST["product-description"];
+
+			if (!isset($_SESSION['shopping-cart'])) {
+				$_SESSION['shopping-cart'] = [];
+			}
+
+			//check if product already in shopping cart
+			if (array_key_exists($product_id, $_SESSION['shopping-cart'])) {
+				$_SESSION['shopping-cart'][$product_id][3]++;
+			} else {
+				$_SESSION['shopping-cart'][$product_id] = [$product_name, $list_price, $description, 1];
+			}
+
+			var_dump($_SESSION['shopping-cart']);
+		}
+		?>
+
+	</main>
+
+	<?php include 'footer.php' ?>
+</body>
+
+</html>

@@ -8,11 +8,9 @@
 </head>
 
 <body>
-  <header>
-    <?php include 'navbar.php' ?>
-  </header>
+  <?php include 'navbar.php' ?>
 
-  <main class="home__main">
+  <main class="page__main home-page__main">
     <!-- Hero -->
     <section class="hero-section">
       <div>

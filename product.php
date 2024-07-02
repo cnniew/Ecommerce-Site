@@ -8,11 +8,9 @@
 </head>
 
 <body>
-  <header>
-    <?php include 'navbar.php' ?>
-  </header>
+  <?php include 'navbar.php' ?>
 
-  <main class="product-page__main">
+  <main class="page__main">
     <section class="product-details__section">
       <?php
       require 'config.php';
@@ -42,13 +40,18 @@
           </div>
         
           <div class="product-details__content">
-            <h2 class="product-details__content-name">' . $product_name . '</h2>
-            <p class="product-details__content-price">$' . $list_price . '</p>
-            <p class="product-details__content-description">' . $description . '</p>
-
             <form action="shopping_cart.php" method="post">
-              <input type="hidden" name="product_id" value="' . $product_id . '">
-              <input type="hidden" name="list_price" value="' . $list_price . '">
+              <input type="hidden" name="product-id" value="' . $product_id . '">
+
+              <h2 class="product-details__content-name">' . $product_name . '</h2>
+              <input type="hidden" name="product-name" value="' . $product_name . '">
+
+              <p class="product-details__content-price">$' . $list_price . '</p>
+              <input type="hidden" name="list-price" value="' . $list_price . '">
+
+              <p class="product-details__content-description">' . $description . '</p>
+              <input type="hidden" name="product-description" value="' . $description . '">
+
               <button class="product-details__content-btn" type="submit">Add to Cart</button>
             </form>
 

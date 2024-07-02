@@ -1,45 +1,4 @@
 <footer class="footer">
-  <section class="footer__join-section">
-    <div>
-      <h3 class="footer__join-title">Join our newsletter</h3>
-      <p class="footer__join-description">We'll send you a nice letter once per week. No spam.</p>
-    </div>
-
-    <?php
-    $email = $email_error = $email_success = "";
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      if (empty($_POST["email"])) {
-        $email_error = "Email address is required.";
-      } else {
-        $email = test_input($_POST["email"]);
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-          $email_error = "Please enter a valid email address.";
-        } else {
-          $connection->query('INSERT INTO newsletter VALUES ("' . $email . '")');
-          $email_success = "Subscription successful! Please check your email to confirm.";
-        }
-      }
-    }
-
-    function test_input($data)
-    {
-      $data = trim($data);
-      $data = stripslashes($data);
-      $data = htmlspecialchars($data);
-      return $data;
-    }
-    ?>
-
-    <form class="footer__join-form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-      <input class="footer__join-input" type="email" name="email" placeholder="Enter your email">
-      <button class="footer__join-btn">Subscribe</button>
-    </form>
-    <div class="footer__error"><?php echo $email_error; ?></div>
-    <div class="footer__success"><?php echo $email_success; ?></div>
-    </div>
-  </section>
-
   <section class="footer__links-section">
     <div class="footer__logo-container">
       <a href="home.php"><img src=" img/stylenest.svg" alt="stylenest logo"></a>
